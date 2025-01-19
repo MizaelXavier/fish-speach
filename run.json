@@ -1,0 +1,30 @@
+{
+  "run": [{
+    "method": "shell.run",
+    "params": {
+      "message": "Ativando ambiente virtual...",
+      "command": "source venv/bin/activate"
+    }
+  }, {
+    "method": "shell.run",
+    "params": {
+      "message": "Executando o modelo Fish Speech...",
+      "command": "python inference.py --text \"{{input.text}}\" --output_path \"{{input.output_path}}\""
+    }
+  }],
+  "input": {
+    "text": {
+      "type": "string",
+      "title": "Texto para sintetizar",
+      "description": "Digite o texto que você deseja converter em fala",
+      "required": true
+    },
+    "output_path": {
+      "type": "string",
+      "title": "Caminho do arquivo de saída",
+      "description": "Digite o caminho onde o arquivo de áudio será salvo",
+      "default": "output.wav",
+      "required": true
+    }
+  }
+} 
