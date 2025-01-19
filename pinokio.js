@@ -3,10 +3,10 @@ module.exports = {
   description: "Modelo de síntese de voz Fish Speech",
   icon: "icon.png",
   menu: [{
-    html: "Instalar",
-    href: "install.json"
+    html: "Install",
+    href: "install.js"
   }, {
-    html: "Executar",
-    href: "run.json"
+    html: "Start",
+    href: "start.js"
   }]
 } 
