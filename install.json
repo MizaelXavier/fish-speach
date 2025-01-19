@@ -2,32 +2,22 @@
   "run": [{
     "method": "shell.run",
     "params": {
-      "message": "Criando ambiente virtual Python...",
       "command": "python -m venv venv"
     }
   }, {
     "method": "shell.run",
     "params": {
-      "message": "Ativando ambiente virtual...",
-      "command": "source venv/bin/activate"
+      "command": ". venv/bin/activate && pip install --upgrade pip"
     }
   }, {
     "method": "shell.run",
     "params": {
-      "message": "Atualizando pip...",
-      "command": "pip install --upgrade pip"
+      "command": ". venv/bin/activate && pip install -r requirements.txt"
     }
   }, {
     "method": "shell.run",
     "params": {
-      "message": "Instalando dependências...",
-      "command": "pip install -r requirements.txt"
-    }
-  }, {
-    "method": "shell.run",
-    "params": {
-      "message": "Verificando instalação...",
-      "command": "python -c 'import torch; print(f\"PyTorch instalado: {torch.__version__}\")'"
+      "command": ". venv/bin/activate && python -c 'import torch; print(f\"PyTorch version: {torch.__version__}\")'"
     }
   }]
 } 

@@ -2,14 +2,7 @@
   "run": [{
     "method": "shell.run",
     "params": {
-      "message": "Ativando ambiente virtual...",
-      "command": "source venv/bin/activate"
-    }
-  }, {
-    "method": "shell.run",
-    "params": {
-      "message": "Executando o modelo Fish Speech...",
-      "command": "python inference.py --text \"{{input.text}}\" --output_path \"{{input.output_path}}\""
+      "command": ". venv/bin/activate && python inference.py --text \"{{input.text}}\" --output_path \"{{input.output_path}}\""
     }
   }],
   "input": {
